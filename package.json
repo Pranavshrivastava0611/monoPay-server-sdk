@@ -1,0 +1,39 @@
+{
+  "name": "monopay-server-sdk",
+  "version": "1.0.0",
+  "description": "MonoPay middleware for protecting routes with payment verification",
+  "main": "./src/index.js",
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "monopay",
+    "middleware",
+    "payment",
+    "solana",
+    "web3",
+    "nextjs"
+  ],
+  "author": "Pranav Shrivastava",
+  "license": "MIT",
+  "peerDependencies": {
+    "next": "^12.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pranavshrivastava0611/monoPay-server-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Pranavshrivastava0611/monoPay-server-sdk/issues"
+  },
+  "homepage": "https://github.com/Pranavshrivastava0611/monoPay-server-sdk#readme"
+}
