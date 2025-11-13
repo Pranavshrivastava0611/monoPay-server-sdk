@@ -14,7 +14,11 @@ export function createMonoPayMiddleware(apiKey, hostApi) {
       let config = getCachedService(apiKey);
 
       if (!config) {
-        const res = await fetch(`${HOST_API}/service/config?apikey=${apiKey}`);
+        const res = await fetch(`${HOST_API}/service/config?apikey=${apiKey}`,{
+          headers: {
+            Host: process.env.NEXT_PUBLIC_MONOPAY_HOST_API
+          }
+        });
         const data = await res.json();
 
         if (!data.success) {
@@ -57,7 +61,10 @@ export function createMonoPayMiddleware(apiKey, hostApi) {
       // Uncomment when ready to verify payments
       const verifyRes = await fetch(`${HOST_API}/verify`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Host: process.env.NEXT_PUBLIC_MONOPAY_HOST_API,
+        },
         body: JSON.stringify({
           txSignature: txSig,
           serviceId: config.serviceId,
